@@ -1,5 +1,21 @@
 @import 'semantic-ui';
 
-h1 {
-  color: red;
+.fa {
+  background-image: "../../message_me.png";
+  color: rgb(72, 168, 237);
+  font-size: 140px;
+  box-sizing: content-box;
+  line-height: 200px;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: rgb(256, 256, 256);
 }
+
+.chatbox {
+  height: 450px;
+}
+

@@ -1,30 +1,19 @@
 class MessagesController < ApplicationController
-
-  def new
-    
-  end
+  
+  before_action :require_user
 
   def create
-    @message = Message.new(params[:body, :user_id])
-    if @message.save
-      flash[:success] = "Object successfully created"
-      redirect_to @message
-    else
-      flash[:error] = "Something went wrong"
-      render 'new'
+    message = current_user.messages.build(message_params)
+    if message.save
+      redirect_to root_path
     end
   end
 
-  def index
-    @messages = Message.all
-  end
-  
+  private
 
-  def show
-    @messages = Message.all
+  def message_params
+    params.require(:message).permit(:body)
   end
-  
-  
-  
+
 
 end
